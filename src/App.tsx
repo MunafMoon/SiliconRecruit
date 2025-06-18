@@ -7,11 +7,13 @@ import Blog from './pages/Blog';
 import Login from './pages/Login';
 import GetStarted from './pages/GetStarted';
 import Layout from './components/Layout';
-import './index.css'
+import ScrollToTop from './ScrollToTop'; // Import your custom component
+import './index.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop /> {/* Add your custom scroll to top component here */}
       <Layout>
         <Routes>
           <Route path="/SiliconRecruit" element={<Home />} />

@@ -1,0 +1,19 @@
+File-> package.json
+"name": "silicon-recruit-website",
+  "homepage": "https://MunafMoon.github.io/SiliconRecruit/",
+
+File->vite.config.ts
+ plugins: [react()],
+  base:"/SiliconRecruit",
+
+IN CMD
+git init
+
+git add .
+
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/MunafMoon/SiliconRecruit.git
+git push -u origin main
+
+npm run deploy
