@@ -85,7 +85,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-20" style={{fontFamily: 'Montserrat'}}>
       {/* Header Section */}
       <section className="py-16 bg-[#192B59] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

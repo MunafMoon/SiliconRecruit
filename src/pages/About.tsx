@@ -1,9 +1,16 @@
+// import { Users, Award, CheckCircle, Briefcase } from 'lucide-react';
 import React from 'react';
-import { Users, Award, CheckCircle, Briefcase } from 'lucide-react';
+import { Users,Briefcase, Award, CheckCircle, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import AboutBuilding from "../assets/AboutBuilding.png";
+import AbouteUs2 from '../assets/AbouteUs2.png'; // Adjust the path as necessary
+import AbouteUs3 from '../assets/AbouteUs3.png'; // Adjust the path as necessary
+import AbouteUs4 from '../assets/AbouteUs4.png'; // Adjust the path as necessary
+import AbouteUs5 from '../assets/AbouteUs5.png'; // Adjust the path as necessary
 
 const About: React.FC = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-20" style={{fontFamily: 'Montserrat'}}>
       {/* Header Section */}
       <section className="py-16 bg-[#192B59] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,17 +25,40 @@ const About: React.FC = () => {
       </section>
       
       {/* Company Overview */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                 <div>
+              <tr>
+                <td>
+                 <img 
+                src={AbouteUs2}
+                alt="Silicon Recruit team" 
+                className="rounded-lg shadow-xl"
+              />
+                </td>
+                
+                <td>
+                  <hr />
+                </td>
+                <td>
+                 <img 
+                src={AbouteUs3}
+                alt="Silicon Recruit team" 
+                className="rounded-lg shadow-xl"
+              />
+                </td>
+              </tr>
+            </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Our Story
-              </h2>
+               <div className="flex items-start mb-4">
+                <img src={AboutBuilding} alt="" className="h-6 w-6 text-blue-600 mr-2"/>
+                <h2 className="text-xl font-bold text-gray-800">About Us</h2>
+              </div>
               <p className="text-lg text-gray-600 mb-4">
-                Founded in 2005, Silicon Recruit has grown from a small regional staffing agency to a global 
-                talent solutions provider with offices in major cities across North America, Europe, and the Middle East.
-              </p>
+               Decades of Staffing Experience at Your Service
+We bring deep expertise in permanent, temporary, and contract staffing with a sharp focus on results. Whether you're hiring for agility or long-term growth, we deliver the right fit—fast.
+    </p>
               <p className="text-lg text-gray-600 mb-4">
                 Our journey began with a simple mission: to transform how companies find talent and how 
                 professionals find opportunities. Today, we're proud to be a trusted partner to some of the 
@@ -39,13 +69,100 @@ const About: React.FC = () => {
                 tailored staffing solutions that drive business success.
               </p>
             </div>
-            <div>
-              <img 
-                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+       
+          </div>
+        </div>
+      </section> */}
+
+      <section className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-12">
+            <div className="lg:w-1/2">
+              <div className="relative">
+                <tr>
+                <td>
+                 <img 
+                src={AbouteUs2}
                 alt="Silicon Recruit team" 
                 className="rounded-lg shadow-xl"
               />
+                </td>
+                
+                <td>
+                  <hr />
+                </td>
+                <td>
+                 <img 
+                src={AbouteUs3}
+                alt="Silicon Recruit team" 
+                className="rounded-lg shadow-xl"
+              />
+                </td>
+              </tr>
+                
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-transparent rounded-lg"></div>
+              </div>
             </div>
+            <div className="lg:w-1/2">
+              <div className="flex items-start mb-4">
+                {/* <Building2 className="h-6 w-6 text-blue-600 mr-2" /> */}
+                <img src={AboutBuilding} alt="" className="h-6 w-6 text-blue-600 mr-2"/>
+                <h2 className="text-xl font-bold text-gray-800">About Us</h2>
+              </div>
+              
+              <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Decades of Staffing
+                <span className="block">Experience at Your Service</span>
+              </h3>
+              
+              <p className="text-gray-600 mb-8">
+               We bring deep expertise in permanent, temporary, and contract staffing with a sharp focus on results. Whether you're hiring for agility or long-term growth, we deliver the right fit—fast.
+              </p>
+              
+              <div className="space-y-8">
+                <div className="flex">
+                  <div className="flex-shrink-0 mt-1">
+                    {/* <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                      <CheckCircle className="h-6 w-6" />
+                    </div> */}
+                      <img src={AbouteUs4} alt="" />
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-xl font-semibold text-gray-900">Our Vision</h4>
+                    <p className="mt-2 text-gray-600">
+                      Analyze cash flow, income, expenses, debts, assets, liabilities, and financial ratios to identify potential risks and tolerance.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex">
+                  <div className="flex-shrink-0 mt-1">
+                    {/* <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                      <Search className="h-6 w-6" />
+                    </div> */}
+                    <img src={AbouteUs5} alt="" />
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-xl font-semibold text-gray-900">Our Mission</h4>
+                    <p className="mt-2 text-gray-600">
+                      It involves analyzing market trends, identifying opportunities, and assessing risks to develop a well-structured approach.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8">
+                <Link 
+                  to="/get-started" 
+                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+                >
+                  Contact Us
+                  <ArrowUpRight className="ml-2 h-5 w-5" />
+                </Link>
+              </div>
+            </div>
+            
+            
           </div>
         </div>
       </section>
@@ -96,7 +213,7 @@ const About: React.FC = () => {
       </section>
       
       {/* Team Section */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">Our Leadership Team</h2>
@@ -164,7 +281,7 @@ const About: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* CTA Section */}
       <section className="py-16 bg-blue-600">
@@ -182,7 +299,7 @@ const About: React.FC = () => {
                 Hire Talent
               </a>
               <a 
-                href="/job-search" 
+                href="/get-started" 
                 className="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-blue-700 transition-colors duration-200"
               >
                 Find Jobs

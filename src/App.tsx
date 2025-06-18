@@ -7,6 +7,7 @@ import Blog from './pages/Blog';
 import Login from './pages/Login';
 import GetStarted from './pages/GetStarted';
 import Layout from './components/Layout';
+import './index.css'
 
 function App() {
   return (

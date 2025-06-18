@@ -25,7 +25,8 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (!target.closest('.services-dropdown')) {
+      // Ensure the click is outside the services dropdown button and its content
+      if (!target.closest('.services-dropdown') && !target.closest('.services-button')) {
         setIsServicesOpen(false);
       }
     };
@@ -40,30 +41,33 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${
-        isScrolled ? 'bg-[#192B59] shadow-md py-2' : 'bg-[#192B59] py-4'
-      }`}
+    <nav
+      style={{ backgroundColor: '#ffffff' }} // This inline style is problematic, see notes below
+      className={`fixed w-full z-50 transition-all duration-300 ease-in-out
+        ${isScrolled ? 'bg-[#192B59] shadow-md py-2' : 'bg-[#192B59] py-4'}
+      `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center h-20"> {/* <--- ADD h-20 HERE */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <Logo />
             </Link>
           </div>
-          
+
           {/* Desktop Navigation */}
+          {/* ... (rest of your desktop nav) */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium transition-colors duration-200">
+            {/* ... your desktop nav items */}
+            <Link to="/" className="text-[#254389] hover:text-blue-200 px-3 py-2 text-sm font-medium transition-colors duration-200">
               Home
             </Link>
-            <Link to="/about" className="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium transition-colors duration-200">
+            <Link to="/about" className="text-[#254389] hover:text-blue-200 px-3 py-2 text-sm font-medium transition-colors duration-200">
               About
             </Link>
             <div className="relative services-dropdown">
-              <button 
-                className="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center"
+              <button
+                className="services-button text-[#254389] hover:text-blue-200 px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center" // Added services-button class
                 onClick={(e) => {
                   e.stopPropagation();
                   setIsServicesOpen(!isServicesOpen);
@@ -75,29 +79,29 @@ const Navbar: React.FC = () => {
               {isServicesOpen && (
                 <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
                   <div className="py-1">
-                    <Link 
-                      to="/services/permanent" 
+                    <Link
+                      to="/services/permanent"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={handleServiceClick}
                     >
                       Permanent Staffing
                     </Link>
-                    <Link 
-                      to="/services/temporary" 
+                    <Link
+                      to="/services/temporary"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={handleServiceClick}
                     >
                       Temporary Staffing
                     </Link>
-                    <Link 
-                      to="/services/contract" 
+                    <Link
+                      to="/services/contract"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={handleServiceClick}
                     >
                       Contract Staffing
                     </Link>
-                    <Link 
-                      to="/services/executive" 
+                    <Link
+                      to="/services/executive"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={handleServiceClick}
                     >
@@ -107,11 +111,11 @@ const Navbar: React.FC = () => {
                 </div>
               )}
             </div>
-            <Link to="/blog" className="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium transition-colors duration-200">
+            <Link to="/blog" className="text-[#254389] hover:text-blue-200 px-3 py-2 text-sm font-medium transition-colors duration-200">
               Blog
             </Link>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/login" className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-[#192B59] bg-white hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
               Login
@@ -120,7 +124,7 @@ const Navbar: React.FC = () => {
               Get Started
             </Link>
           </div>
-          
+
           {/* Mobile Navigation Button */}
           <div className="md:hidden flex items-center">
             <button
@@ -133,26 +137,27 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-[#192B59] border-t border-blue-800">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link 
-              to="/" 
+            {/* ... Mobile nav items */}
+            <Link
+              to="/"
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
-            <Link 
-              to="/about" 
+            <Link
+              to="/about"
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
-            <button 
+            <button
               className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800"
               onClick={() => setIsServicesOpen(!isServicesOpen)}
             >
@@ -160,29 +165,29 @@ const Navbar: React.FC = () => {
             </button>
             {isServicesOpen && (
               <div className="pl-4 space-y-1">
-                <Link 
-                  to="/services/permanent" 
+                <Link
+                  to="/services/permanent"
                   className="block px-3 py-2 rounded-md text-sm font-medium text-blue-200 hover:bg-blue-800"
                   onClick={handleServiceClick}
                 >
                   Permanent Staffing
                 </Link>
-                <Link 
-                  to="/services/temporary" 
+                <Link
+                  to="/services/temporary"
                   className="block px-3 py-2 rounded-md text-sm font-medium text-blue-200 hover:bg-blue-800"
                   onClick={handleServiceClick}
                 >
                   Temporary Staffing
                 </Link>
-                <Link 
-                  to="/services/contract" 
+                <Link
+                  to="/services/contract"
                   className="block px-3 py-2 rounded-md text-sm font-medium text-blue-200 hover:bg-blue-800"
                   onClick={handleServiceClick}
                 >
                   Contract Staffing
                 </Link>
-                <Link 
-                  to="/services/executive" 
+                <Link
+                  to="/services/executive"
                   className="block px-3 py-2 rounded-md text-sm font-medium text-blue-200 hover:bg-blue-800"
                   onClick={handleServiceClick}
                 >
@@ -190,23 +195,23 @@ const Navbar: React.FC = () => {
                 </Link>
               </div>
             )}
-            <Link 
-              to="/blog" 
+            <Link
+              to="/blog"
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800"
               onClick={() => setIsMenuOpen(false)}
             >
               Blog
             </Link>
             <div className="pt-4 flex flex-col space-y-2">
-              <Link 
-                to="/login" 
+              <Link
+                to="/login"
                 className="w-full inline-flex justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-[#192B59] bg-white hover:bg-blue-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Login
               </Link>
-              <Link 
-                to="/get-started" 
+              <Link
+                to="/get-started"
                 className="w-full inline-flex justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
                 onClick={() => setIsMenuOpen(false)}
               >

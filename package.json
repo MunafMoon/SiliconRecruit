@@ -1,19 +1,24 @@
 {
   "name": "silicon-recruit-website",
+  "homepage": "https://MunafMoon.github.io/SiliconRecruit.git/",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@fontsource/montserrat": "^5.2.5",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.57.0",
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {

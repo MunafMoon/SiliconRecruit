@@ -6,7 +6,7 @@ const Login: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <div className="min-h-screen pt-20 bg-gray-50 flex flex-col justify-center">
+    <div className="min-h-screen pt-20 bg-gray-50 flex flex-col justify-center" style={{fontFamily: 'Montserrat'}}>
       <div className="max-w-md w-full mx-auto p-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="p-6 sm:p-8">

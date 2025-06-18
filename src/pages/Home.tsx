@@ -1,15 +1,21 @@
 import React from 'react';
-import { ArrowRight, Building, Users, MapPin, Search, Briefcase, Award, CheckCircle, ArrowUpRight, LucideArrowUpRightFromSquare } from 'lucide-react';
+import {  ArrowUpRight, LucideArrowUpRightFromSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import JobSearchForm from '../components/JobSearchForm';
 import LocationSelector from '../components/LocationSelector';
 import TestimonialCarousel from '../components/TestimonialCarousel';
-import StatCounter from '../components/StatCounter';
-import HomeIcon from "../assets/images/Home.png"
 import HomeStaff from "../assets/images/2.Staff.png"
+import Industryimg from "../assets/images/Industryimg.png"
+import HomeDropdown from "./HomeDropdown";
+import HomeSolution from "./HomeSolutionSolutionWeProvide";
+import HomeOurServices from "./HomeOurServices";
+import OurTeamSupport from "../assets/OurTeamSupport.png"
+import AboutBuilding from "../assets/AboutBuilding.png";
+import AbouteUs4 from "../assets/AbouteUs4.png";
+import AbouteUs5 from "../assets/AbouteUs5.png";
+
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen" style={{fontFamily: 'Montserrat'}}>
       {/* Hero Section */}
       <section className="pt-24 lg:pt-32 pb-20 bg-[#192B59] relative overflow-hidden">
         <div className="absolute right-0 bottom-0 w-full h-16 bg-white" style={{ clipPath: 'polygon(0 100%, 100% 0, 100% 100%, 0% 100%)' }}></div>
@@ -39,11 +45,17 @@ const Home: React.FC = () => {
             <div className="relative">
               <div className="relative z-10">
                 <img 
-                  src={HomeIcon} 
+                  src={HomeStaff} 
                   alt="Professional recruiters" 
-                  className="rounded-lg shadow-2xl"
+                  className="rounded-lg"
                 />
               </div>
+              
+                 {/* <img 
+                  src={Vector2} 
+                  alt="Professional recruiters" 
+                  className="rounded-lg"
+                /> */}
               
               {/* <div className="absolute top-8 right-8 bg-white p-6 rounded-lg shadow-xl z-20 hidden lg:block">
                 <div className="flex items-center mb-3">
@@ -84,7 +96,8 @@ const Home: React.FC = () => {
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2">
               <div className="flex items-start mb-4">
-                <Building className="h-6 w-6 text-blue-600 mr-2" />
+                {/* <Building2 className="h-6 w-6 text-blue-600 mr-2" /> */}
+                <img src={AboutBuilding} alt="" className="h-6 w-6 text-blue-600 mr-2"/>
                 <h2 className="text-xl font-bold text-gray-800">About Us</h2>
               </div>
               
@@ -101,37 +114,40 @@ const Home: React.FC = () => {
               <div className="space-y-8">
                 <div className="flex">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                    {/* <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
                       <CheckCircle className="h-6 w-6" />
-                    </div>
+                    </div> */}
+                    <img src={AbouteUs4} alt="" />
                   </div>
                   <div className="ml-4">
                     <h4 className="text-xl font-semibold text-gray-900">Our Vision</h4>
                     <p className="mt-2 text-gray-600">
-                      Analyze cash flow, income, expenses, debts, assets, liabilities, and financial ratios to identify potential risks and tolerance.
-                    </p>
+                      To drive progress by connecting business needs with the right people. We go beyond resumes—analyzing costs, risks, and business goals to craft smart, future-ready hiring strategies.
+                      </p>
                   </div>
                 </div>
                 
                 <div className="flex">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                    {/* <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
                       <Search className="h-6 w-6" />
-                    </div>
+                    </div> */}
+                    <img src={AbouteUs5} alt="" />
                   </div>
                   <div className="ml-4">
                     <h4 className="text-xl font-semibold text-gray-900">Our Mission</h4>
                     <p className="mt-2 text-gray-600">
-                      It involves analyzing market trends, identifying opportunities, and assessing risks to develop a well-structured approach.
-                    </p>
+                      To empower organizations with better hiring decisions through data-backed insights, detailed market understanding, and a hands-on approach that prioritizes people and performance.
+                      </p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-8">
                 <Link 
-                  to="/about" 
+                  to="/get-started" 
                   className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+                  style={{backgroundColor: '#2F579C', padding:'12px', width:"150px", height:"55px", borderRadius:'10px'}}  
                 >
                   Contact Us
                   <ArrowUpRight className="ml-2 h-5 w-5" />
@@ -141,22 +157,91 @@ const Home: React.FC = () => {
             
             <div className="lg:w-1/2">
               <div className="relative">
-                <img 
-                  src= {HomeStaff}
+                {/* <img 
+                  src= {HomeIcon}
                   alt="Team meeting" 
-                  className="rounded-lg shadow-xl"
-                />
+                  // className="rounded-lg shadow-xl"
+                /> */}
                 
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-transparent rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-transparent rounded-lg">
+                <LocationSelector/>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Stats Section */}
+      { /* Industry Section */}
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-12">
+            <div className="lg:w-1/2">
+              <div className="flex items-start mb-4">
+                {/* <Building className="h-6 w-6 text-blue-600 mr-2" /> */}
+                <img src={AboutBuilding} alt="Building" className="h-6 w-6 text-blue-600 mr-2"/>
+                <h2 className="text-xl font-bold text-gray-800">Industry</h2>
+              </div>
+              
+              <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Innovation Across
+                <span className="block">Industries</span>
+              </h3>
+              
+              <p className="text-gray-600 mb-8">
+                With 29+ years of expertise, we specialize in sourcing high-quality talent for Fortune 500 and Global 1000 organizations across key sectors such as:
+              </p>
+              
+              <div className="space-y-8">
+                <div className="flex">
+                  <div className="flex-shrink-0 mt-1">
+                    {/* <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                      <CheckCircle className="h-6 w-6" />
+                    </div> */}
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-xl font-semibold text-gray-900"></h4>
+                    <p className="mt-2 text-gray-600">
+                      <img src={Industryimg} alt="Placeholder" className="inline-block mr-2" />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="lg:w-1/2">
+            <HomeDropdown />
+            {/* <div className="flex items-start mb-4">
+              </div>
+              
+              <h4 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Banking, Financial Services, and Insurance
+              </h4>
+              
+              <p className="text-gray-600 mb-8">
+               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+              </p>
+              
+              <div className="space-y-8">
+                <div className="flex">
+                  <div className="flex-shrink-0 mt-1">
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-xl font-semibold text-gray-900"></h4>
+                    <p className="mt-2 text-gray-600">
+                      <img src={Industryimg} alt="Placeholder" className="inline-block mr-2" />
+                    </p>
+                  </div>
+                </div>
+              </div> */}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Stats Section */}
+      <section className="py-16 lg:py-24">
+        <HomeSolution />
+        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">Why Choose Silicon Recruit</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
@@ -201,76 +286,20 @@ const Home: React.FC = () => {
               <p className="text-gray-600 mt-2">Decades of industry expertise</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
       
       {/* Services Section */}
-      <section className="py-16 lg:py-24">
+      <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Our Services</h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              We offer comprehensive recruiting solutions tailored to your specific needs.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Permanent Staffing',
-                description: 'Find the perfect long-term addition to your team with our thorough permanent placement services.',
-                icon: <Users className="h-6 w-6" />,
-              },
-              {
-                title: 'Temporary Staffing',
-                description: 'Flexible workforce solutions to help manage workload fluctuations and special projects.',
-                icon: <Briefcase className="h-6 w-6" />,
-              },
-              {
-                title: 'Contract Staffing',
-                description: 'Specialized professionals available for project-based work with flexible contract terms.',
-                icon: <Building className="h-6 w-6" />,
-              },
-              {
-                title: 'Executive Search',
-                description: 'Target and recruit top-tier leadership talent to drive your organization forward.',
-                icon: <Award className="h-6 w-6" />,
-              },
-              {
-                title: 'Recruitment Process Outsourcing',
-                description: 'Streamline your entire hiring process with our comprehensive RPO solutions.',
-                icon: <CheckCircle className="h-6 w-6" />,
-              },
-              {
-                title: 'Global Talent Acquisition',
-                description: 'Access international talent pools to find the perfect candidates across borders.',
-                icon: <MapPin className="h-6 w-6" />,
-              },
-            ].map((service, index) => (
-              <div 
-                key={index} 
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 group"
-              >
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <Link 
-                  to={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center transition-colors duration-200"
-                >
-                  Learn more
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            ))}
+            <HomeOurServices />
           </div>
         </div>
       </section>
       
       {/* Locations Section */}
-      <section className="py-16 bg-[#192B59] text-white relative overflow-hidden">
+      {/* <section className="py-16 bg-[#192B59] text-white relative overflow-hidden">
         <div className="absolute left-0 top-0 w-full h-16 bg-white" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 0)' }}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-8">
@@ -283,18 +312,22 @@ const Home: React.FC = () => {
           
           <LocationSelector />
         </div>
-      </section>
+      </section> */}
       
       {/* Testimonials Section */}
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">What Our Clients Say</h2>
+            {/* <img src={OurTeamSupport} alt="Testimonials"/> */}
+            
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Hear from the companies and candidates who've experienced our exceptional service.
+              <img src={OurTeamSupport} alt="Testimonials"/>
+              {/* Hear from the companies and candidates who've experienced our exceptional service. */}
             </p>
           </div>
-          
+          <div className='text-center'>
+          <h2 className="text-3xl font-bold text-gray-900">What Our Clients Say</h2>
+          </div>
           <TestimonialCarousel />
         </div>
       </section>
