@@ -100,20 +100,20 @@ const Navbar: React.FC = () => {
                     >
                       Contract Staffing
                     </Link>
-                    <Link
+                    {/* <Link
                       to="/services/executive"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={handleServiceClick}
                     >
                       Executive Search
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               )}
             </div>
-            <Link to="/blog" className="text-[#254389] hover:text-blue-200 px-3 py-2 text-sm font-medium transition-colors duration-200">
+            {/* <Link to="/blog" className="text-[#254389] hover:text-blue-200 px-3 py-2 text-sm font-medium transition-colors duration-200">
               Blog
-            </Link>
+            </Link> */}
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -127,9 +127,9 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Navigation Button */}
           <div className="md:hidden flex items-center">
-            <button
+            <button style={{ color: "black" }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-200 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-200 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
             >
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -144,7 +144,7 @@ const Navbar: React.FC = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {/* ... Mobile nav items */}
             <Link
-              to="/"
+              to="/SiliconRecruit"
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -195,13 +195,13 @@ const Navbar: React.FC = () => {
                 </Link>
               </div>
             )}
-            <Link
+            {/* <Link
               to="/blog"
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800"
               onClick={() => setIsMenuOpen(false)}
             >
               Blog
-            </Link>
+            </Link> */}
             <div className="pt-4 flex flex-col space-y-2">
               <Link
                 to="/login"

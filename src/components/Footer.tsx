@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, X, Linkedin, Instagram } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer: React.FC = () => {
@@ -14,21 +14,21 @@ const Footer: React.FC = () => {
               Specializing in permanent, temporary, and contract staffing with a focus on results.
             </p>
             <div className="mt-6 flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+              {/* <a href="#" target="_blank" className="text-gray-400 hover:text-white transition-colors duration-200">
                 <Facebook className="h-5 w-5" />
+              </a> */}
+              <a href="https://x.com/srecrutmen93701?s=21&t=ViCKy3L5lBBrcutFkyswrw" target="_blank" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <X className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a href="https://www.linkedin.com/company/silicon-recruit/" target="_blank" className="text-gray-400 hover:text-white transition-colors duration-200">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a href="https://www.instagram.com/siliconrecruit?igsh=ZXlnaTJiZmJibjlz" target="_blank" className="text-gray-400 hover:text-white transition-colors duration-200">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -41,15 +41,15 @@ const Footer: React.FC = () => {
               {/* <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors duration-200">Our Services</Link>
               </li> */}
-              <li>
+              {/* <li>
                 <Link to="/blog" className="text-gray-300 hover:text-white transition-colors duration-200">Blog</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/get-started" className="text-gray-300 hover:text-white transition-colors duration-200">Contact</Link>
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
@@ -62,15 +62,15 @@ const Footer: React.FC = () => {
               <li>
                 <Link to="/services/contract" className="text-gray-300 hover:text-white transition-colors duration-200">Contract Staffing</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/services/executive" className="text-gray-300 hover:text-white transition-colors duration-200">Executive Search</Link>
               </li>
               <li>
                 <Link to="/services/recruitment" className="text-gray-300 hover:text-white transition-colors duration-200">Recruitment Process Outsourcing</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-4">
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="mt-12 pt-8 border-t border-blue-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Silicon Recruit. All rights reserved.</p>

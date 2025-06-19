@@ -1,8 +1,8 @@
-import React from 'react';
-import Solution1 from "../assets/images/SolutionWeProvide/image1.png"
-import Solution2 from "../assets/images/SolutionWeProvide/image2.png"
-import Solution3 from "../assets/images/SolutionWeProvide/image3.png"
-import Solution6 from "../assets/images/SolutionWeProvide/image6.png"
+// import React from 'react';
+import Solution1 from "../assets/images/SolutionWeProvide/image1.png";
+import Solution2 from "../assets/images/SolutionWeProvide/image2.png";
+import Solution3 from "../assets/images/SolutionWeProvide/image3.png";
+import Solution6 from "../assets/images/SolutionWeProvide/image6.png";
 import { Link } from 'react-router-dom';
 
 const App: React.FC = () => {
@@ -15,9 +15,16 @@ const App: React.FC = () => {
           font-family: 'Arial', sans-serif;
           margin: 0;
           padding: 0;
-          background-color:rgb(255, 255, 255); /* Light grey background from your previous image */
+          background-color: rgb(255, 255, 255);
           color: #333;
           line-height: 1.6;
+        }
+
+        /* Ensure images are always responsive */
+        img {
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Remove extra space below images */
         }
 
         .container {
@@ -26,7 +33,7 @@ const App: React.FC = () => {
           gap: 30px; /* Space between columns */
           max-width: 1200px; /* Max width for the whole layout */
           margin: 60px auto; /* Center the layout */
-          padding: 20px;
+          padding: 20px; /* Add padding for smaller screens */
           align-items: start; /* Align items to the top of their grid areas */
         }
 
@@ -53,7 +60,13 @@ const App: React.FC = () => {
           font-weight: bold;
           line-height: 1.2;
           color: #1a1a1a; /* Dark text */
-          margin: 0;
+          margin: 0; /* Remove default margin */
+        }
+
+        /* Ensure images within heading/paragraph scale */
+        .main-heading img, .sub-text img {
+          max-width: 100%;
+          height: auto;
         }
 
         .sub-text {
@@ -61,7 +74,7 @@ const App: React.FC = () => {
           color: #555;
           margin-top: 15px;
         }
-
+        
         .dark-card {
           background-color: #2c3e50; /* Dark blue/purple from image */
           color: #ffffff;
@@ -123,18 +136,27 @@ const App: React.FC = () => {
         .middle-column {
           display: flex;
           flex-direction: column;
-          align-items: center;
-        //   gap: 30px;
+          align-items: center; /* Center items horizontally within the column */
+          gap: 30px; /* Space between the two images */
+          /* No person-image class, handled by general img rules or specific styles below */
         }
 
-        .person-image {
-          width: 80%; /* Adjust size */
-          max-width: 300px; /* Max size for the image */
-          border-radius: 50%; /* If you want it circular */
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-          border: 5px solid #fff; /* White border as in image */
-          object-fit: cover; /* Ensures image covers the area nicely */
+        /* Specific styles for the main images in the middle column */
+        .middle-column .main-image {
+          border-radius: 15% / 25%; /* Apply specific border-radius here */
+          object-fit: cover;
+          max-width: 100%; /* Ensure it scales within its column */
+          /* You can set a fixed width if you want, but then manage overflow or use object-fit-cover well */
+          /* For example, if images are naturally different sizes, max-width: 100% is best */
         }
+
+        /* Adjust max-width for the larger Solution6 image */
+        .middle-column .solution6-image {
+            max-width: 100%; /* Still ensures it fits its container */
+            border-radius: 15% / 25%;
+            object-fit: cover;
+        }
+
 
         .pie-chart-container {
           background-color: #ffffff;
@@ -249,10 +271,11 @@ const App: React.FC = () => {
             font-size: 0.8em;
         }
         
-        /* --- Responsiveness (Basic) --- */
+        /* --- Responsiveness --- */
         @media (max-width: 992px) {
           .container {
             grid-template-columns: 1fr 1fr; /* 2 columns on medium screens */
+            gap: 25px; /* Adjust gap for smaller screens */
           }
           .middle-column {
               grid-column: span 2; /* Middle column spans both columns */
@@ -270,14 +293,46 @@ const App: React.FC = () => {
           .container {
             grid-template-columns: 1fr; /* Single column on small screens */
             gap: 20px;
+            padding: 15px; /* More padding for very small screens */
           }
           .middle-column, .left-column, .right-column {
-              grid-column: span 1; /* Reset span */
+              grid-column: unset; /* Reset span */
               order: unset; /* Reset order */
           }
+          /* Ensure all cards and images take full width on small screens */
           .dark-card, .pie-chart-container, .appointment-card {
-              max-width: 100%; /* Full width */
+              max-width: 100%;
           }
+          .main-heading {
+              font-size: 2.2em; /* Smaller heading on mobile */
+          }
+        }
+
+        /* Extra small screens adjustments */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+                margin: 30px auto; /* Less vertical margin */
+            }
+            .main-heading {
+                font-size: 1.8em;
+            }
+            .contact-us-button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+            .checklist-content h3 {
+                font-size: 1em;
+            }
+            .checklist-content p {
+                font-size: 0.85em;
+            }
+            .appointment-card {
+                padding: 20px;
+            }
+            .appointment-card h3 {
+                font-size: 1.1em;
+            }
         }
       `}</style>
 
@@ -285,13 +340,19 @@ const App: React.FC = () => {
         {/* Left Column */}
         <div className="left-column">
           <div>
+            {/* If Solution1 and Solution2 are meant to be a combined heading/intro, keep them.
+                If Solution1 is the "Solution We Provide" highlight text, then change h1 to span
+                and adjust its styling. Assuming they are part of the visual design for now.
+            */}
             {/* <span className="highlight-text">Solution We Provide</span> */}
-            <h1 className="main-heading"><img src={Solution1} alt="" /></h1>
-            
+            <h1 className="main-heading">
+                <img src={Solution1} alt="Solution Title" />
+            </h1>
           </div>
           <p className="sub-text">
-            <img src={Solution2} alt="" />
+            <img src={Solution2} alt="Solution Description" />
           </p>
+          {/* Re-introducing the commented out section if you intend to use it */}
           {/* <p className="sub-text">
             Lorem Ipsum is simply dummy text of the printing and
             typesetting industry.
@@ -305,33 +366,28 @@ const App: React.FC = () => {
         </div>
 
         {/* Middle Column */}
+        {/* Corrected: Removed the nested middle-column div */}
         <div className="middle-column">
           <img
-            src= {Solution3}
+            src={Solution3}
             alt="Smiling Professional"
-            // className="person-image"
-            style={{ borderRadius: '15% / 25%', objectFit: 'cover', maxWidth: '300px' }} /* More complex border-radius to mimic image */
+            className="main-image" // Use a class for consistency
           />
-           <div className="middle-column">
-
           <img
-            src= {Solution6}
-            alt="Smiling Professional"
-            // className="person-image"
-            style={{ borderRadius: '15% / 25%', objectFit: 'cover', maxWidth: '500px' }} /* More complex border-radius to mimic image */
-            />
-            </div>
+            src={Solution6}
+            alt="Solution Details"
+            className="solution6-image" // Specific class for potential distinct styling
+          />
+          {/* Re-introducing the commented out section if you intend to use it */}
           {/* <div className="pie-chart-container">
             Dummy Pie Chart (using SVG for basic shape)
             <svg width="150" height="150" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="45" fill="#f0f0f0" /> Base circle
-              Slice 1 (e.g., 77% Documents - yellow/purple mix)
-              <path d="M50 50 L50 5 A45 45 0 0 1 93.682 66.862 Z" fill="#ffc107" /> Yellow part
-              <path d="M50 50 L93.682 66.862 A45 45 0 0 1 50 95 Z" fill="#9c27b0" /> Purple part
-              Slice 2 (e.g., 23% remaining - white/blue/red mix)
-              <path d="M50 50 L50 95 A45 45 0 0 1 6.318 66.862 Z" fill="#2196f3" /> Blue part
-              <path d="M50 50 L6.318 66.862 A45 45 0 0 1 50 5 Z" fill="#f44336" /> Red part
-              <circle cx="50" cy="50" r="25" fill="white" /> Inner white circle
+              <circle cx="50" cy="50" r="45" fill="#f0f0f0" />
+              <path d="M50 50 L50 5 A45 45 0 0 1 93.682 66.862 Z" fill="#ffc107" />
+              <path d="M50 50 L93.682 66.862 A45 45 0 0 1 50 95 Z" fill="#9c27b0" />
+              <path d="M50 50 L50 95 A45 45 0 0 1 6.318 66.862 Z" fill="#2196f3" />
+              <path d="M50 50 L6.318 66.862 A45 45 0 0 1 50 5 Z" fill="#f44336" />
+              <circle cx="50" cy="50" r="25" fill="white" />
               <text x="50" y="55" textAnchor="middle" fontSize="18" fill="#333" fontWeight="bold">77%</text>
             </svg>
             <div className="pie-chart-legend">
@@ -368,15 +424,9 @@ const App: React.FC = () => {
                 <div className="star-rating">★★★★★</div> {/* 5 stars unicode */}
               </div>
             </div>
-              <Link to="/get-started" className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+            <Link to="/get-started" className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
               Get Started
             </Link>
-            {/* <a href="#" className="contact-us-button">
-              Contact Us
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-              </svg>
-            </a> */}
           </div>
         </div>
       </div>

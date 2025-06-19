@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -9,6 +8,9 @@ import GetStarted from './pages/GetStarted';
 import Layout from './components/Layout';
 import ScrollToTop from './ScrollToTop'; // Import your custom component
 import './index.css';
+import Permanent from './pages/Services/permanent'
+import Temporary from './pages/Services/temporary'
+import Contract from './pages/Services/contract'
 
 function App() {
   return (
@@ -19,6 +21,11 @@ function App() {
           <Route path="/SiliconRecruit" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          {/* <Route path="/services/:serviceType" element={<Services />} /> */}
+          <Route path="/services/permanent" element={<Permanent/>} />
+          <Route path="/services/temporary" element={<Temporary />} />
+          <Route path="/services/contract" element={<Contract />} />
+
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
           <Route path="/get-started" element={<GetStarted />} />

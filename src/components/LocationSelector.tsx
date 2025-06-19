@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { MapPin } from 'lucide-react';
+import dubai from "../assets/images/Flag/dubai.jpg"
+import California from "../assets/images/Flag/california.jpg"
+import canada from "../assets/images/Flag/canada.jpg";
 
 const locations = [
   {
@@ -7,14 +10,14 @@ const locations = [
     name: 'United States',
     description: 'Our largest market with offices in New York, San Francisco, and Chicago.',
     number:'+1 (415) 404-3999',
-    image: 'https://images.pexels.com/photos/1682794/pexels-photo-1682794.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: California
   },
   {
     id: 'canada',
     name: 'Canada',
     description: 'Serving the Canadian market with offices in Toronto and Vancouver.',
     number:'+1 (415) 404-3999',
-    image: 'https://images.pexels.com/photos/2479154/pexels-photo-2479154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: canada
   },
   {
     id: 'uk',
@@ -28,7 +31,7 @@ const locations = [
     name: 'Dubai',
     description: 'Supporting the Middle East from our Dubai regional office.',
     number:'+971 50 172 4382',
-    image: 'https://images.pexels.com/photos/1683508/pexels-photo-1683508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: dubai
   }
 ];
 
@@ -64,11 +67,11 @@ const LocationSelector: React.FC = () => {
       <div className="lg:col-span-2">
         <div className="relative rounded-xl overflow-hidden h-80 group">
           <div className="absolute inset-0 bg-gradient-to-t from-blue-900/100 to-transparent">
-          {/* <img 
+          <img 
             src={activeLocation.image} 
             alt="img"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            /> */}
+            />
             </div>
           <div className="absolute bottom-0 left-0 p-6">
             <h3 className="text-2xl font-bold text-white mb-2">{activeLocation.name}</h3>

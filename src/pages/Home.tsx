@@ -211,82 +211,22 @@ const Home: React.FC = () => {
             
             <div className="lg:w-1/2">
             <HomeDropdown />
-            {/* <div className="flex items-start mb-4">
-              </div>
-              
-              <h4 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Banking, Financial Services, and Insurance
-              </h4>
-              
-              <p className="text-gray-600 mb-8">
-               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
-              </p>
-              
-              <div className="space-y-8">
-                <div className="flex">
-                  <div className="flex-shrink-0 mt-1">
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-xl font-semibold text-gray-900"></h4>
-                    <p className="mt-2 text-gray-600">
-                      <img src={Industryimg} alt="Placeholder" className="inline-block mr-2" />
-                    </p>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
       </section>
+
       {/* Stats Section */}
-      <section className="py-16 lg:py-24">
+      {/* <section className="py-16 lg:py-24">
         <HomeSolution />
-        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      </section> */}
+         <section className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Why Choose Silicon Recruit</h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              We've built a reputation for excellence in the recruiting industry with our proven results.
-            </p>
-          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-4">
-                <Users className="h-8 w-8" />
-              </div>
-              <StatCounter end={8500} suffix="+" />
-              <h3 className="text-lg font-semibold text-gray-900 mt-2">Placed Candidates</h3>
-              <p className="text-gray-600 mt-2">Successfully placed in their dream jobs</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-4">
-                <Building className="h-8 w-8" />
-              </div>
-              <StatCounter end={950} suffix="+" />
-              <h3 className="text-lg font-semibold text-gray-900 mt-2">Client Companies</h3>
-              <p className="text-gray-600 mt-2">Trusted partners across industries</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-4">
-                <Briefcase className="h-8 w-8" />
-              </div>
-              <StatCounter end={150} suffix="+" />
-              <h3 className="text-lg font-semibold text-gray-900 mt-2">Active Vacancies</h3>
-              <p className="text-gray-600 mt-2">Open positions across all sectors</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-4">
-                <Award className="h-8 w-8" />
-              </div>
-              <StatCounter end={20} suffix="+" />
-              <h3 className="text-lg font-semibold text-gray-900 mt-2">Years Experience</h3>
-              <p className="text-gray-600 mt-2">Decades of industry expertise</p>
-            </div>
-          </div>
-        </div> */}
+         <HomeSolution />
+        </div>
+        </div>
       </section>
       
       {/* Services Section */}
