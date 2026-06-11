@@ -15,11 +15,11 @@ import Contract from './pages/Services/contract'
 
 function App() {
   return (
-    <Router>
+    <Router basename="/SiliconRecruit">
       <ScrollToTop /> {/* Add your custom scroll to top component here */}
       <Layout>
         <Routes>
-          <Route path="/SiliconRecruit" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/terms-conditions" element={<TeamsCondition />} />
           <Route path="/services" element={<Services />} />
